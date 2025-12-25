@@ -1,1 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Alexander Elias</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container inner">
+    <a class="brand" href="index.html">
+      <div class="mark" aria-hidden="true"></div>
+      <div>
+        <div class="name">Alexander Elias</div>
+        <span class="role">Strategy • Marketing • Build</span>
+      </div>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a data-nav href="index.html">Home</a>
+      <a data-nav href="projects.html">Projects</a>
+      <a data-nav href="experience.html">Experience</a>
+      <a data-nav href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="pagehead">
+    <div class="container">
+      <h1 class="fade-up">Contact</h1>
+      <p class="fade-up">
+        Best way: email. If you want a form, this version uses <strong>mailto</strong> (no backend needed).
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="card fade-up">
+        <div class="pad">
+          <div class="grid-3" style="grid-template-columns: 1.1fr .9fr .9fr">
+            <div class="item" style="background:transparent">
+              <div class="h"><strong>Email</strong><span class="tag">Fastest</span></div>
+              <p style="margin-top:10px">
+                <a class="btn primary" href="mailto:YOUR_EMAIL_HERE?subject=Website%20Inquiry">YOUR_EMAIL_HERE</a>
+              </p>
+            </div>
+            <div class="item" style="background:transparent">
+              <div class="h"><strong>LinkedIn</strong><span class="tag">Network</span></div>
+              <p style="margin-top:10px">
+                <a class="btn" href="#" onclick="return false;">Add link</a>
+              </p>
+            </div>
+            <div class="item" style="background:transparent">
+              <div class="h"><strong>Instagram</strong><span class="tag">Social</span></div>
+              <p style="margin-top:10px">
+                <a class="btn" href="#" onclick="return false;">Add link</a>
+              </p>
+            </div>
+          </div>
+
+          <hr />
+
+          <form class="form" onsubmit="return buildMailto(event)">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" placeholder="Your name" required />
+            </div>
+
+            <div class="field">
+              <label for="topic">Topic</label>
+              <input id="topic" name="topic" placeholder="Brand / Web / Content / Consulting" required />
+            </div>
+
+            <div class="field">
+              <label for="msg">Message</label>
+              <textarea id="msg" name="msg" placeholder="What are you building? What's the goal?" required></textarea>
+            </div>
+
+            <button class="btn primary" type="submit">Send</button>
+            <div style="color:var(--muted2); font-size:12px">
+              Tip: replace the mailto email above with your real address.
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container row">
+    <div>© <span id="y"></span> Alexander Elias</div>
+    <div style="display:flex; gap:12px; flex-wrap:wrap">
+      <a href="projects.html" class="pill">Projects</a>
+      <a href="experience.html" class="pill">Experience</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+
+  function buildMailto(e){
+    e.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const topic = document.getElementById("topic").value.trim();
+    const msg = document.getElementById("msg").value.trim();
+
+    const subject = encodeURIComponent(`Website Inquiry — ${topic}`);
+    const body = encodeURIComponent(`Name: ${name}\nTopic: ${topic}\n\n${msg}\n\n— Sent from alexanderelias.ca`);
+    window.location.href = `mailto:YOUR_EMAIL_HERE?subject=${subject}&body=${body}`;
+    return false;
+  }
+</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
 
