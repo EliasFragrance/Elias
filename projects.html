@@ -4,103 +4,92 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects — Alexander Elias</title>
+  <meta name="description" content="Personal projects and builds." />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
 
-<header class="topbar">
-  <div class="container inner">
-    <a class="brand" href="index.html">
-      <div class="mark" aria-hidden="true"></div>
-      <div>
-        <div class="name">Alexander Elias</div>
-        <span class="role">Strategy • Marketing • Build</span>
-      </div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Home">
+      <span class="brand-mark"></span><span>Alexander Elias</span>
     </a>
-
-    <nav class="nav" aria-label="Primary">
-      <a data-nav href="index.html">Home</a>
-      <a data-nav href="projects.html">Projects</a>
-      <a data-nav href="experience.html">Experience</a>
-      <a data-nav href="contact.html">Contact</a>
+    <nav class="nav">
+      <a href="about.html" data-nav>About</a>
+      <a href="work.html" data-nav>Work</a>
+      <a href="projects.html" data-nav>Projects</a>
+      <a href="resume.html" data-nav>Resume</a>
+      <a class="btn btn-ghost" href="contact.html" data-nav>Contact</a>
     </nav>
   </div>
 </header>
 
-<main>
-  <section class="pagehead">
-    <div class="container">
-      <h1 class="fade-up">Projects</h1>
-      <p class="fade-up">Selected work. Clean builds, strong positioning, and execution that looks premium.</p>
+<main class="container">
+  <div class="kicker"><span class="dot"></span> Projects</div>
+  <h1>Things I’m building</h1>
+  <p class="lead">This is for personal/side projects, experiments, and entrepreneurial builds.</p>
+
+  <section class="grid">
+    <div class="col-6 card pad">
+      <div class="section-title"><h2>Featured</h2><span class="small">1–3</span></div>
+      <div class="list">
+        <div class="item">
+          <h3>Project name</h3>
+          <p>What it is, who it’s for, and what makes it interesting.</p>
+          <div class="meta"><span>Status: Active</span><span>•</span><span>Focus: Brand / Web</span></div>
+        </div>
+        <div class="item">
+          <h3>Project name</h3>
+          <p>Short + punchy. Add a link later if public.</p>
+          <div class="meta"><span>Status: Prototype</span></div>
+        </div>
+      </div>
     </div>
-  </section>
 
-  <section class="section">
-    <div class="container project-grid">
-      <article class="card project fade-up">
-        <div class="thumb">
-          <!-- Optional: replace with a real image -->
-          <!-- <img src="assets/img/project-1.jpg" alt="Project preview" /> -->
-        </div>
-        <div class="pad">
-          <div class="name">Parfums de Elias — Brand + Site</div>
-          <p class="desc">Luxury fragrance house identity, product pages, and launch narrative.</p>
-          <div class="links">
-            <a class="btn" href="#" onclick="return false;">Case Study</a>
-            <a class="btn ghost" href="#" onclick="return false;">Live</a>
-          </div>
-        </div>
-      </article>
+    <div class="col-6 card pad">
+      <div class="section-title"><h2>Toolkit</h2><span class="small">What I use</span></div>
+      <div class="pill-row">
+        <span class="pill">GA4</span>
+        <span class="pill">Google Tag Manager</span>
+        <span class="pill">Figma</span>
+        <span class="pill">HTML/CSS</span>
+        <span class="pill">Copywriting</span>
+        <span class="pill">Ads thinking</span>
+      </div>
+      <div class="hr"></div>
+      <p class="small">
+        If you want, I can structure each project into: Problem → Approach → Build → Result → Learnings.
+      </p>
+    </div>
 
-      <article class="card project fade-up">
-        <div class="thumb"></div>
-        <div class="pad">
-          <div class="name">Content Ops System</div>
-          <p class="desc">Template-driven pipeline for filming, editing, posting, and reporting.</p>
-          <div class="links">
-            <a class="btn" href="#" onclick="return false;">Breakdown</a>
-          </div>
+    <div class="col-12 card pad">
+      <div class="section-title"><h2>All projects</h2><span class="small">List</span></div>
+      <div class="list">
+        <div class="item">
+          <h3>Project</h3>
+          <p>One-liner. Keep it premium and minimal.</p>
         </div>
-      </article>
-
-      <article class="card project fade-up">
-        <div class="thumb"></div>
-        <div class="pad">
-          <div class="name">Local Business Growth Pack</div>
-          <p class="desc">Offer design + landing page + ad creatives + tracking foundation.</p>
-          <div class="links">
-            <a class="btn" href="#" onclick="return false;">Details</a>
-          </div>
+        <div class="item">
+          <h3>Project</h3>
+          <p>One-liner.</p>
         </div>
-      </article>
-
-      <article class="card project fade-up">
-        <div class="thumb"></div>
-        <div class="pad">
-          <div class="name">Personal Brand Website</div>
-          <p class="desc">High-trust portfolio layout with crisp sections and premium motion.</p>
-          <div class="links">
-            <a class="btn" href="index.html">Home</a>
-          </div>
+        <div class="item">
+          <h3>Project</h3>
+          <p>One-liner.</p>
         </div>
-      </article>
+      </div>
     </div>
   </section>
 </main>
 
 <footer class="footer">
-  <div class="container row">
-    <div>© <span id="y"></span> Alexander Elias</div>
-    <div style="display:flex; gap:12px; flex-wrap:wrap">
-      <a href="contact.html" class="pill">Work with me</a>
-      <a href="experience.html" class="pill">Experience</a>
-    </div>
+  <div class="container" style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+    <span>© <span id="y"></span> Alexander Elias</span>
+    <span><a href="work.html">Work</a> • <a href="contact.html">Contact</a></span>
   </div>
 </footer>
 
-<script>
-  document.getElementById("y").textContent = new Date().getFullYear();
-</script>
 <script src="assets/js/main.js"></script>
+<script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>
