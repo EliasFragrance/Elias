@@ -231,14 +231,16 @@ body{
   text-align:center;
 }
 
-.avatar{
+  .avatar{
   width: 86px;
   height: 86px;
   border-radius: 999px;
   margin: 0 auto 14px;
+
   background:
     radial-gradient(circle at 30% 30%, rgba(255,255,255,0.35), rgba(255,255,255,0.05)),
-    rgba(255,255,255,0.06);
+    url("../assets/img/avatar.png") center / cover no-repeat;
+
   border: 1px solid rgba(255,255,255,0.14);
 }
 
