@@ -86,6 +86,73 @@ body{
   opacity: .9;
 }
 
+/* =========================
+   ROOT VARIABLES
+========================= */
+:root {
+  --cream: #F7F5F2;
+  --charcoal: #1F1F1F;
+}
+
+/* =========================
+   BASE / RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   GLOBAL BACKGROUND (ADD HERE)
+========================= */
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--cream);
+  background-image: url("assets/img/architecture-light.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--charcoal);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(247, 245, 242, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("assets/img/grain.png");
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+h1, h2, h3 {
+  font-family: "Playfair Display", serif;
+}
+
+/* =========================
+   LAYOUT / COMPONENTS
+========================= */
+/* header, sections, cards, etc */
+
+
 /* PAGE WRAPPER */
 .page{
   max-width: 1120px;
