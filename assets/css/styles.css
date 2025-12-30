@@ -169,6 +169,23 @@ body{
   border-radius: 12px;
   font-size: 14px;
 }
+/* ICON BUTTON (LinkedIn) */
+.btn.icon{
+  padding: 6px;
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn.icon img{
+  width: 14px;
+  height: 14px;
+  display: block;
+  object-fit: contain;
+  filter: invert(1);
+}
 
 /* RIGHT CARD */
 .hero-card{
