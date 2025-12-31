@@ -351,6 +351,34 @@ button:focus-visible{
 .card-link{ color: rgba(247,245,242,.86); }
 .card-link:hover{ color: var(--accent); }
 
+/* ===== HEADER COLOR OVERRIDE ===== */
+.site-header{
+  background: var(--charcoal);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.site-header.scrolled{
+  background: var(--charcoal);     /* keep it charcoal even on scroll */
+  backdrop-filter: none;           /* optional: removes glass blur */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* Nav + brand text */
+.site-header,
+.site-header a{
+  color: var(--cream);
+}
+
+/* Hover + active states */
+.nav a:hover{
+  color: rgba(247,245,242,0.75);
+}
+
+.nav a.active::after{
+  background: var(--cream);
+  opacity: 0.9;
+}
+
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px){
