@@ -342,3 +342,79 @@ button:focus-visible{
   .nav{ letter-spacing: 0.14em; }
   .hero-title{ font-size: clamp(38px, 10vw, 58px); }
 }
+
+/* =========================
+   Mobile optimization (desktop-first patch)
+   Paste at END of file
+   ========================= */
+
+/* 1) Make page padding fluid instead of hard 110px */
+:root{
+  --page-pad-x: clamp(16px, 6vw, 110px);
+  --page-pad-y: clamp(18px, 3.5vw, 28px);
+}
+
+/* 2) Header spacing scales down smoothly */
+.header-inner{
+  padding-left: clamp(14px, 4vw, 34px);
+  padding-right: clamp(14px, 4vw, 34px);
+}
+
+/* 3) Nav: allow wrapping + tighter spacing by default */
+.nav{
+  flex-wrap: wrap;
+  row-gap: 6px;
+  column-gap: 10px;
+
+  /* keep your style but prevent insane width on smaller screens */
+  letter-spacing: clamp(0.10em, 1.2vw, 0.34em);
+  font-size: clamp(13px, 1.7vw, 18px);
+}
+
+.nav a{
+  padding: 10px 8px;
+}
+
+/* 4) Hero: prevent “too tall” feel on mobile browsers */
+.hero{
+  min-height: calc(100svh - var(--header-h) - (var(--page-pad-y) * 2));
+}
+
+/* 5) Tablet and below: stack layout + tame typography */
+@media (max-width: 900px){
+  .hero{
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .hero-card{
+    width: 100%;
+    max-width: 520px;
+    justify-self: start;
+  }
+}
+
+/* 6) Phones: keep header usable, prevent nav overflow disasters */
+@media (max-width: 620px){
+  /* let nav scroll horizontally instead of breaking layout */
+  .nav{
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+  .nav::-webkit-scrollbar{ display:none; }
+
+  .nav a{
+    white-space: nowrap;
+  }
+}
+
+/* 7) Small phones: adjust brand + hero text */
+@media (max-width: 520px){
+  .brand img{ height: 34px; } /* your current 46px is big for a tight header */
+  .hero-title{ font-size: clamp(34px, 10vw, 56px); }
+  .hero-subtitle{ font-size: 18px; }
+}
+
