@@ -217,7 +217,7 @@ button:focus-visible{
   justify-content: center;
 
   border-radius: 999px;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1;
 }
 
@@ -240,7 +240,7 @@ button:focus-visible{
   .hero-card .btn.small{
     height: 36px;
     padding: 0 12px;
-    font-size: 13px;
+    font-size: 16px;
   }
 }
 
