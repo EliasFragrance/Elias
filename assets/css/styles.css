@@ -221,26 +221,27 @@ button:focus-visible{
   line-height: 1;
 }
 
-/* ---------- Card action buttons (override) ---------- */
-.card-actions .btn{
-  background: #000000;
-  color: #ffffff;
-  font-family: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;
-  border-color: rgba(255,255,255,0.25);
+/* Keep the 3 buttons on ONE line (shrink them instead of wrapping) */
+.hero-card .card-actions{
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
 }
 
-.card-actions .btn:hover{
-  background: #0a0a0a;
-  border-color: rgba(255,255,255,0.45);
+.hero-card .card-actions .btn{
+  flex: 1 1 0;          /* each button can shrink/grow equally */
+  min-width: 0;         /* IMPORTANT: allows flex items to actually shrink */
+  white-space: nowrap;  /* stop text breaking */
 }
-/* ---------- Card actions layout ---------- */
-.card-actions{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  flex-wrap: nowrap;
-  margin-top: 22px;
+
+/* Optional: make them slightly tighter on small screens */
+@media (max-width: 420px){
+  .hero-card .card-actions{ gap: 8px; }
+  .hero-card .btn.small{
+    height: 36px;
+    padding: 0 12px;
+    font-size: 13px;
+  }
 }
 
 /* =========================
