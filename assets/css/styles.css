@@ -182,7 +182,7 @@ button:focus-visible{
   font-size: 22px;
   line-height: 1.6;
   color: var(--charcoal-2);
-  font-family: "Playfair Display", "Libre Baskerville", serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 /* ---------- Buttons ---------- */
@@ -235,7 +235,7 @@ button:focus-visible{
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: 0 30px 80px rgba(0,0,0,.45);
-  font-family: "Playfair Display", "Libre Baskerville", serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .card-top{
