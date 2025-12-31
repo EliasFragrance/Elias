@@ -397,9 +397,10 @@ button:focus-visible{
   width: 50%;
   border-radius: 999px;
 
-  background: linear-gradient(90deg,
-  rgba(247,245,242,0.98),
-  rgba(250,249,246,0.98)
+background: linear-gradient(90deg,
+  rgba(58,16,18,0.98),
+  rgba(88,24,28,0.98),
+  rgba(58,16,18,0.98)
 );
 
   box-shadow:
