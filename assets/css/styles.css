@@ -327,12 +327,45 @@ button:focus-visible{
 .card-link:hover{ color: var(--accent); }
 
 /* =========================
-   Responsive (Desktop → Mobile)
+   Responsive + Mobile optimization (desktop-first)
+   Put this at the VERY END of the file
    ========================= */
 
-/* ---------- Tablet ---------- */
-@media (max-width: 900px){
+/* Fluid page padding instead of fixed 110px */
+:root{
+  --page-pad-x: clamp(16px, 6vw, 110px);
+  --page-pad-y: clamp(18px, 3.5vw, 28px);
+}
 
+/* Make header inner padding scale down smoothly */
+.header-inner{
+  padding-left: clamp(14px, 4vw, 34px);
+  padding-right: clamp(14px, 4vw, 34px);
+}
+
+/* Allow nav to wrap earlier (prevents overflow) */
+.nav{
+  flex-wrap: wrap;
+  row-gap: 6px;
+  column-gap: 12px;
+  letter-spacing: clamp(0.10em, 1.2vw, 0.34em);
+  font-size: clamp(13px, 1.7vw, 18px);
+}
+
+.nav a{
+  padding: 10px 8px;
+  white-space: nowrap;
+}
+
+/* Use small-viewport height to avoid mobile browser UI jumpiness */
+.hero{
+  min-height: calc(100svh - var(--header-h) - (var(--page-pad-y) * 2));
+}
+
+/* =========================
+   Tablet and below
+   ========================= */
+@media (max-width: 900px){
   .nav{
     font-size: 13px;
     letter-spacing: 0.18em;
@@ -344,83 +377,69 @@ button:focus-visible{
   }
 
   .hero-card{
+    width: 100%;
     max-width: 520px;
+    justify-self: start;
   }
 }
 
-/* ---------- Phones ---------- */
+/* =========================
+   Phones: header auto height so stacked content fits
+   + mobile header polish (centered nav + larger logo)
+   ========================= */
 @media (max-width: 620px){
-
-  /* Header must grow when stacked */
   .site-header{
-    height: auto;
-    padding: 10px 0;
+    height: auto;            /* KEY FIX: header can grow */
+    padding: 10px 0;         /* gives breathing room */
   }
 
   .header-inner{
     height: auto;
+    padding: 0 18px;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
     gap: 10px;
-
-    padding-left: 18px;
-    padding-right: 18px;
   }
 
-  /* Logo = visual anchor */
   .brand{
-    margin: 0;
+    margin-top: 0;
   }
 
   .brand img{
-    height: 38px;
+    height: 38px;            /* final chosen size */
   }
 
-  /* Nav fully centered */
   .nav{
     width: 100%;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-
-    column-gap: 14px;
-    row-gap: 8px;
-
+    text-align: center;
     font-size: 14px;
     letter-spacing: 0.12em;
-    text-align: center;
   }
 
   .nav a{
-    padding: 6px 6px;
-    white-space: nowrap;
     text-align: center;
   }
 
   .nav a.active::after{
-    bottom: -6px;
-  }
-
-  /* Hero sizing */
-  .hero{
-    min-height: calc(100svh - var(--header-h));
+    bottom: -6px;            /* tighten underline spacing */
   }
 }
 
-/* ---------- Small phones ---------- */
-@media (max-width: 420px){
+/* =========================
+   Small phones: tame typography
+   ========================= */
+@media (max-width: 520px){
+  .hero-title{ font-size: clamp(34px, 10vw, 56px); }
+  .hero-subtitle{ font-size: 18px; }
+}
 
+/* Extra small */
+@media (max-width: 420px){
   .brand img{
     height: 36px;
   }
-
-  .hero-title{
-    font-size: clamp(34px, 10vw, 56px);
-  }
-
-  .hero-subtitle{
-    font-size: 18px;
-  }
 }
+
